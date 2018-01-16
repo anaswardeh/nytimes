@@ -1,7 +1,26 @@
 ul.search-results img {
-  margin: 0 auto;
+  margin: 1 auto;
+
 }
 
 .results{
   min-height: 400px;
+}
+
+#results-form{
+  min-height: 126px;
+  border: 0;
+  width: 1110px;
+}
+
+img{
+  float: right;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  width: 190px;
+}
+
+li.search-results{
+  float: left;
 }

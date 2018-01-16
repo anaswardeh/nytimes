@@ -1,15 +1,12 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import Search from './pages/search';
-import Footer from "./components/Footer";
-
+import index from './components/Login/index'
 
 
 const App = () =>
   <Router>
     <div>
-        <Route exact path="/" component={Search} />
-        <Footer />
+        <Route exact path="/" component={index} />
     </div>
   </Router>;
 

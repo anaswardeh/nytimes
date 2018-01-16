@@ -1,0 +1,10 @@
+nav.navbar.navbar-default {
+    margin-bottom: 0;
+  }
+
+.nav-link{
+  color: black;
+  font-size: .8vw;
+  font-style: bold;
+}
+
