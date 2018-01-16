@@ -35,8 +35,6 @@ class Search extends React.Component {
     handleFormSubmit = event => {
       event.preventDefault();
 
-
-
       API.searchArticle(this.state.q, this.state.begin_date, this.state.end_date)
         .then(res => {
           if (res.data.status === "error") {
