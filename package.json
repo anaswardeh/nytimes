@@ -1,19 +1,44 @@
 {
   "name": "nytimes",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "axios": "^0.17.1",
-    "firebase": "^4.8.2",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
-    "react-router-dom": "^4.2.2",
-    "react-scripts": "1.0.17"
-  },
+  "version": "1.0.0",
+  "description": "## About This Boilerplate",
+  "main": "server.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
-  }
+    "debug": "concurrently \"node --inspect-brk=43240 server.js\" \"npm run client\"",
+    "server": "node server.js",
+    "client": "node scripts/start-client.js",
+    "start": "concurrently \"nodemon server.js\" \"npm run client\"",
+    "build": "node scripts/build.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "installDeps": "yarn && cd client && yarn"
+  },
+  "author": "Mohammed Wardeh",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^3.5.0",
+    "nodemon": "^1.11.0"
+  },
+  "dependencies": {
+    "axios": "^0.16.2",
+    "body-parser": "^1.17.2",
+    "express": "^4.15.4",
+    "mongoose": "^4.11.7"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anaswardeh/nytimes.git"
+  },
+  "keywords": [
+    "nytimes",
+    "scrubbing",
+    "react",
+    "node",
+    "express",
+    "mvc",
+    "mongodb"
+  ],
+  "bugs": {
+    "url": "https://github.com/anaswardeh/nytimes/issues"
+  },
+  "homepage": "https://github.com/anaswardeh/nytimes#readme"
 }
