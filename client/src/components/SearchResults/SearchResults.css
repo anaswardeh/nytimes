@@ -8,19 +8,30 @@ ul.search-results img {
 }
 
 #results-form{
+  border: 0;
+  width: 1110px;
+}
+
+#save{
+  position: relative;
+  float: right;
+}
+
+li.search-results{
+  float: left;
+}
+
+#results-form{
   min-height: 126px;
   border: 0;
   width: 1110px;
 }
 
 img{
+  height: 100%;
   float: right;
   position: relative;
   margin: 0;
   padding: 0;
   width: 190px;
-}
-
-li.search-results{
-  float: left;
 }

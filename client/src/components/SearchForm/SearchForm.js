@@ -11,7 +11,9 @@ class Search extends React.Component {
     return (
       <form className="search">
         <div className="form-group">
+
           <label htmlFor="topic">Topic: </label>
+
           <input
             value={q}
             onChange={handleInputChange}
@@ -20,34 +22,35 @@ class Search extends React.Component {
             className="form-control"
             placeholder="Enter the Topic You Want to Search About"
             id="q"
+            required
+            autoFocus
           />
 
-
       <br/>
-        <label htmlFor="begin_date">Start Date </label>
+        <label htmlFor="begin_date">Start Year </label>
           <input
             value={begin_date}
             onChange={handleInputChange}
             name="begin_date"
-            type="date"
+            type="text"
             className="form-control"
             placeholder="Searching for Article from this Date"
             id="begin_date"
           />
         <br/>
 
-        <label htmlFor="end_date">End Date </label>
+        <label htmlFor="end_date">End Year </label>
           <input
             value={end_date}
             onChange={handleInputChange}
             name="end_date"
-            type="date"
+            type="text"
             className="form-control"
             placeholder="To this Date"
             id="end_date"
           />
-        <br/>
 
+        <br/>
           <button
             type="submit"
             onClick={handleFormSubmit}
@@ -55,6 +58,10 @@ class Search extends React.Component {
           >
             Search
           </button>
+
+
+
+
         </div>
       </form>
     );

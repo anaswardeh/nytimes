@@ -25,3 +25,5 @@ export function saveUser (user) {
     })
     .then(() => user)
 }
+
+//onAuthenticateStateChange to register a call back with the UID. if null, your logged out else   .... providerData

@@ -1,17 +1,20 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
-const booksController = require("./controllers/booksController")
+const ArticleController = require("./controllers/ArticleController")
 const app = express();
 const PORT = process.env.PORT || 3001;
 
 // Configure body parser for AJAX requests
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+
 // Serve up static assets
-app.use(express.static("client/build"));
+app.use(express.static("client/public"));
+
+
 // Add routes, both API and view
-app.use(booksController);
+app.use(ArticleController);
 
 // Set up promises with mongoose
 mongoose.Promise = global.Promise;

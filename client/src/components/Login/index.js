@@ -8,6 +8,7 @@ import { firebaseAuth } from '../../config/constants'
 import search from '../../pages/search';
 import Footer from '../Footer/Footer'
 import './Login.css'
+import NoMatch from '../../pages/NoMatch'
 
 
 
@@ -59,7 +60,7 @@ export default class App extends Component {
   render() {
     return this.state.loading === true ? <h1>Loading</h1> : (
       <BrowserRouter>
-        <div>
+        <div >
           <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <div className="container-fluid">
             <div className="navbar-header">
@@ -71,7 +72,7 @@ export default class App extends Component {
                 >
                 {this.state.authed
                     ? <span>
-                          <Link to="/" className="nav-link">Home</Link>
+                <Link to="/" className="nav-link">Home</Link>
                       </span>
                     : <span>
                         
@@ -112,18 +113,17 @@ export default class App extends Component {
           <div className="container-fluid">
             <div className="row">
               <Switch>
-                {/* <Route path='/' exact component={search} /> */}
                 <PublicRoute authed={this.state.authed} path='/login' component={Login} />
                 <PublicRoute authed={this.state.authed} path='/register' component={Register} />
                 <PrivateRoute authed={this.state.authed} path='/dashboard' component={Dashboard} />
                 <PrivateRoute authed={this.state.authed} path='/' component={search} />
                 <Route render={() => <h3>No Match</h3>} />
+                <Route component={NoMatch}/>                
               </Switch>
             </div>
           </div>
           <Footer />
         </div>
-
       </BrowserRouter>
     );
   }

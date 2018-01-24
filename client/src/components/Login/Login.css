@@ -8,3 +8,8 @@ nav.navbar.navbar-default {
   font-style: bold;
 }
 
+.nav-link{
+  margin-right: 20px;
+  color: black;
+  font-size: 1.2vw;
+}
