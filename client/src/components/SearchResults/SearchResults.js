@@ -24,6 +24,16 @@ API.deleteArticle(id)
   .catch(err => console.log(err));
 };
 
+  // Loads all books  and sets them to this.state.books
+  loadArticle = () => {
+    API.getArticles()
+      .then(res =>
+        this.setState({ articles: res.data, title: "", date: "", url: "", image:"" })
+      )
+      .catch(err => console.log(err));
+  };
+
+
 
   render () {
     const { results } = this.props
@@ -76,9 +86,9 @@ API.deleteArticle(id)
                       <b><a href={search.web_url} target="_new" style={ {color: "black"} }>{search.headline.main}</a></b>
                        <span> {search.pub_date.substring(0, 10)} </span>
    
-
-                       <button value={search._id} onClick={() => this.saveArticle(search.headline.main, search.pub_date.substring(0, 10),
-                     search.web_url, search.multimedia[1].url )}>  Save </button>
+                      <br/>
+                       <button className="btn btn-primary" value={search._id} onClick={() => this.saveArticle(search.headline.main, search.pub_date.substring(0, 10),
+                     search.web_url, search.multimedia[1].url )}>  Save Article </button>
 
                       <button value={search._id} onClick={() => this.deleteArticle(search._id)}> Delete </button>
 

@@ -6,7 +6,7 @@ const articleFunctions = {
   findAll: function (req, res) {
     db.article
       .find(req.query)
-      .sort({ date: -1 })
+      .sort({ saveNow: -1 })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
@@ -36,6 +36,7 @@ const articleFunctions = {
       .catch(err => res.status(422).json(err));
   }
 }
+
 
 router.get("/api/articles", articleFunctions.findAll)
 

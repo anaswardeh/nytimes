@@ -17,11 +17,15 @@ export default {
     return axios.post("/api/articles/", articleData);
   },
   // Gets the book with the given id
-  getArticles: function (id) {
-    return axios.get("/api/articles/" + id);
+  getArticle: function (id) {
+    return axios.get("/api/article/" + id);
   },
   patchArticle: function (id, articleData) {
     return axios.patch("/api/articles/" + id, articleData);
+  },
+  
+    getArticles: function () {
+    return axios.get("/api/article");
   },
 
 };
