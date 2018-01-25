@@ -3,11 +3,9 @@ import "./List.css";
 import PropTypes from 'prop-types';
 
 class List extends React.Component {
-
   render () {
-
     return (
-      <div className="list-overflow-container">
+      <div className="results">
         <ul className="list-group">
           {this.props.children}
         </ul>
@@ -16,9 +14,11 @@ class List extends React.Component {
   }
 }
 
+
 List.props = {
   children: PropTypes.node
 }
+
 
 export default List;
 

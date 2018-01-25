@@ -4,7 +4,6 @@ import SearchForm from "../components/SearchForm";
 import SearchResults from "../components/SearchResults";
 import API from "../utils/API";
 import Banner from "../components/Banner";
-// import Footer from '../components/Footer/'
 
 
 class Search extends React.Component {
@@ -21,20 +20,6 @@ class Search extends React.Component {
       this.handleInputChange = this.handleInputChange.bind(this);
     }
   
-    // componentDidMount() {
-    //   this.handleFormSubmit();
-    // }
-    
-    
-    //   // Loads all books  and sets them to this.state.books
-    // loadArtciles = () => {
-    // API.getArticles()
-    //   .then(res =>
-    //     this.setState({ results: res.data.response.docs  })
-    //   )
-    //   .catch(err => console.log(err));
-    // };
-
 
     handleInputChange(event) {
       const target = event.target;

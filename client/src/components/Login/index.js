@@ -2,13 +2,15 @@ import React, { Component } from 'react'
 import { Route, BrowserRouter, Link, Redirect, Switch } from 'react-router-dom'
 import Login from './Login'
 import Register from './Register'
-import Dashboard from './protected/Dashboard'
+// import Dashboard from './protected/Dashboard'
 import { logout } from '../../helpers/auth'
 import { firebaseAuth } from '../../config/constants'
 import search from '../../pages/search';
 import Footer from '../Footer/Footer'
 import './Login.css'
 import NoMatch from '../../pages/NoMatch'
+import Saved from '../../pages/Saved';
+
 
 
 
@@ -75,15 +77,14 @@ export default class App extends Component {
                 <Link to="/" className="nav-link">Home</Link>
                       </span>
                     : <span>
-                        
                       </span>}
                 </li>
                 <li
-                      className={window.location.pathname === "/dashboard" ? "active" : "" }                >
+                      className={window.location.pathname === "/saved" ? "active" : "" }                >
 
                 {this.state.authed
                     ? <span>
-                        <Link to="/dashboard" className="nav-link">Dashboard</Link>
+                        <Link to="/saved" className="nav-link">Saved Articles</Link>
                     </span>
                     : <span>
                       </span>}
@@ -115,7 +116,7 @@ export default class App extends Component {
               <Switch>
                 <PublicRoute authed={this.state.authed} path='/login' component={Login} />
                 <PublicRoute authed={this.state.authed} path='/register' component={Register} />
-                <PrivateRoute authed={this.state.authed} path='/dashboard' component={Dashboard} />
+                <PrivateRoute authed={this.state.authed} path='/saved' component={Saved} />
                 <PrivateRoute authed={this.state.authed} path='/' component={search} />
                 <Route render={() => <h3>No Match</h3>} />
                 <Route component={NoMatch}/>                

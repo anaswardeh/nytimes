@@ -5,7 +5,7 @@ const db = require("../models");
 const articleFunctions = {
   findAll: function (req, res) {
     db.article
-      .find(req.query)
+      .find({"uid":req.params.uid})
       .sort({ saveNow: -1 })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
@@ -38,11 +38,12 @@ const articleFunctions = {
 }
 
 
-router.get("/api/articles", articleFunctions.findAll)
+router.get("/api/allarticles/:uid", articleFunctions.findAll)
 
 router.post("/api/articles", articleFunctions.create)
 
 router.delete("/api/articles/:id", articleFunctions.remove)
+
 
 
 
