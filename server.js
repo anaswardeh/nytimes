@@ -1,9 +1,11 @@
 const express = require("express");
+const path = require('path');
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const ArticleController = require("./controllers/ArticleController")
 const app = express();
 const PORT = process.env.PORT || 3001;
+
 
 // Configure body parser for AJAX requests
 app.use(bodyParser.urlencoded({ extended: false }));
