@@ -80,7 +80,7 @@ export default class App extends Component {
                       </span>}
                 </li>
                 <li
-                      className={window.location.pathname === "/saved" ? "active" : "" }                >
+                      className={window.location.pathname === "/Saved" ? "active" : "" }                >
 
                 {this.state.authed
                     ? <span>

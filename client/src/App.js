@@ -6,7 +6,7 @@ const App = () =>
 
 <Router>
       <Switch>
-        <Route path="/login"  component={index}/>
+        <Route path="/"  component={index}/>
       </Switch>
 </Router>;
 
