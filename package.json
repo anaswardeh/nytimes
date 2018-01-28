@@ -24,6 +24,7 @@
     "express": "^4.15.4",
     "filter-object": "^3.0.0",
     "filter-values": "^0.4.1",
+    "firebase": "^4.9.0",
     "mongoose": "^4.11.7"
   },
   "repository": {

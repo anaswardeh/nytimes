@@ -1,8 +1,0 @@
-{
-    "vscode-janus-debug.uploadManually": [
-        "ArticleController"
-    ],
-    "vscode-janus-debug.uploadOnSave": [
-        "SearchResults"
-    ]
-}
