@@ -21,7 +21,7 @@
   "dependencies": {
     "axios": "^0.16.2",
     "body-parser": "^1.17.2",
-    "express": "^4.15.4",
+    "express": "4.16.2",
     "filter-object": "^3.0.0",
     "filter-values": "^0.4.1",
     "firebase": "^4.9.0",
