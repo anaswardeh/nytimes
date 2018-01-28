@@ -7,7 +7,8 @@ const articleSchema = new Schema({
   url: { type: String, required: true },
   image: {type: String, required: false},
   uid: { type: String, required: true },
-  saveNow: { type: Date, default: Date.now }
+  saveNow: { type: Date, default: Date.now },
+  synopsis: { type: String, required: false }
 });
 
 const article = mongoose.model("article", articleSchema);

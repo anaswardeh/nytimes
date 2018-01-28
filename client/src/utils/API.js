@@ -24,7 +24,6 @@ export default {
   patchArticle: function (id, articleData) {
     return axios.patch("/api/articles/" + id, articleData);
   },
-  
     getArticles: function (uid) {
     return axios.get("/api/allarticles/" + uid);
   },

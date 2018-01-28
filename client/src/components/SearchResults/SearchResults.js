@@ -7,22 +7,15 @@ import firebase from '../../config/constants';
 
 class SearchResults extends React.Component {
 
-
-
-
 saveArticle = (title, date, url, image, uid) => {
   (image === undefined) ?
   image = 'http://lakefarmbeef.co.nz/wp-content/themes/lakefarm/img/noimage.png'
   :
   API.saveArticle({title: title, date: date, url: url, image: image, uid: uid})
-    .then(res => this.loadArticle())
+    .then(res => console.log(res))
     .catch(err => console.log(err));
   };
 
-  
-changeColor(){
-   		this.setState({color_black: !this.state.color_black})
-}
 
 render () {
     const { results } = this.props
@@ -48,8 +41,6 @@ return (
                 image: search.multimedia.length,
                 uid: search.uid
               });
-
-  
 
     return (
       
