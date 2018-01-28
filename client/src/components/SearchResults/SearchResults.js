@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from 'prop-types';
 import "./SearchResults.css";
 import API from "../../utils/API";
-import firebase from '../../config/constants';
+import firebase from '../config/constants';
 
 
 class SearchResults extends React.Component {

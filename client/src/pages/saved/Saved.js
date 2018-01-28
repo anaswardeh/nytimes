@@ -2,7 +2,7 @@ import React from "react";
 import API from "../../utils/API";
 import Container  from "../../components/Container";
 import { List, ListItem } from '../../components/List';
-import firebase from '../../config/constants';
+import firebase from '../../components/config/constants';
 import DeleteBtn from '../../components/DeleteBtn';
 
 class Articles extends React.Component {
