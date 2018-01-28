@@ -14,9 +14,6 @@ app.use(bodyParser.json());
 // Serve up static assets
 app.use(express.static(__dirname + "client/public"));
 
-app.get('*', function (request, response){
-  response.sendFile(path.resolve(__dirname, 'client/public'))
-})
 
 // Add routes, both API and view
 app.use(ArticleController);
