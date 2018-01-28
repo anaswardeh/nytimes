@@ -7,21 +7,24 @@ import firebase from '../../config/constants';
 
 class SearchResults extends React.Component {
 
-saveArticle = (title, date, url, image, uid) => {
 
+
+
+saveArticle = (title, date, url, image, uid) => {
   (image === undefined) ?
   image = 'http://lakefarmbeef.co.nz/wp-content/themes/lakefarm/img/noimage.png'
-
   :
-
   API.saveArticle({title: title, date: date, url: url, image: image, uid: uid})
     .then(res => this.loadArticle())
     .catch(err => console.log(err));
   };
 
+  
+changeColor(){
+   		this.setState({color_black: !this.state.color_black})
+}
 
-
-  render () {
+render () {
     const { results } = this.props
     const arrayOfArticles = []
     const uid = firebase.auth().currentUser.uid
@@ -31,11 +34,10 @@ return (
 <div className="results"> 
       <ul className="list-group search-results">
 
-
-
-{
-  results.filter((search, i) => {
+{results.filter((search, i) => {
       return search.multimedia[1] !== undefined
+
+      
   }).map((search, i) => {
               // Build array of articles
               arrayOfArticles.push({
@@ -47,16 +49,15 @@ return (
                 uid: search.uid
               });
 
+  
 
     return (
-
       
           <li key={search._id} className="list-group-item" style={ {borderWidth: "0px"} }>
                   <div className="input-group">
                     <div type="text" className="form-control" id="results-form">
         {(search.multimedia[1] === undefined) 
         ?
-        // search.remove(search._id)
             <img alt="placeHolder" src='http://lakefarmbeef.co.nz/wp-content/themes/lakefarm/img/noimage.png'/>
             :
             <img alt="placeHolder" src={"https://static01.nyt.com/"+search.multimedia[1].url} />
@@ -65,29 +66,21 @@ return (
           <span> {search.pub_date.substring(0, 10)} </span>
           <br/>
           <button className="btn btn-primary" value={search._id} 
-          
           onClick={
-            
-            () => this.saveArticle(
-            
-            search.headline.main
-            
-            , search.pub_date.substring(0, 10),
-            
+            () => {this.saveArticle(
+            search.headline.main, 
+            search.pub_date.substring(0, 10),
             search.web_url, 
-                     
-            search.multimedia[1].url 
-            
-            , uid )}>  Save Article </button>
+            search.multimedia[1].url, 
+            uid );
 
+          }}
+            >  Save Article </button>
 
-          <button value={search._id} onClick={() => this.deleteArticle(search._id)}> Delete </button>
                     </div>       
                   </div>
                 </li>
               );
-
-              
             })} 
       </ul>
     </div>

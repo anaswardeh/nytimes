@@ -3,7 +3,7 @@ import API from "../../utils/API";
 import Container  from "../../components/Container";
 import { List, ListItem } from '../../components/List';
 import firebase from '../../config/constants'
-
+import DeleteBtn from '../../components/DeleteBtn'
 
 class Articles extends React.Component {
     constructor(props) {
@@ -60,20 +60,23 @@ deleteArticle = id => {
                  {this.state.articles.map(article => { 
                      return (
                       <ListItem key={article._id} >
+
+
                         <a href={article.url} target="_blank">
                           <strong>
                             {article.title}
                           </strong>
+
                         </a>
                         <br />
-                        {article.date.substring(0,10)}
+                        The Article was published on: {article.date.substring(0,10)}
 
                         <img alt="placeholder" src={"https://static01.nyt.com/" + article.image} />
-                        
                         <br />
                         <strong> The aritcle was saved on </strong>
                         {article.saveNow.substring(0,10)}
-                         {/* <DeleteBtn onClick={() => this.deleteArticle(article._id)} /> */}
+                        <br />
+                        <DeleteBtn onClick={() => this.deleteArticle(article._id)} />
                        </ListItem> 
                      );
                    })}
