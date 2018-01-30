@@ -1,5 +1,4 @@
 const express = require("express");
-const path = require('path');
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const ArticleController = require("./controllers/ArticleController")
@@ -14,7 +13,7 @@ app.use(bodyParser.json());
 // Serve up static assets
 // app.use(express.static("client/public"));
 
-app.use(express.static(path.join(__dirname, 'client', 'public')));
+app.use(express.static("client/build"));
 
 
 // Add routes, both API and view
